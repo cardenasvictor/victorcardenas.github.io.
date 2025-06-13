@@ -1,0 +1,170 @@
+/* Base styles */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background: #fff;
+}
+
+/* Container to center content */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+/* Navigation bar */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5em 1em;
+  text-align: right;
+  background: #f9f9f9;               /* Light background for nav bar */
+  border-bottom: 1px solid #ccc;
+}
+nav ul li {
+  display: inline;
+  margin-left: 1em;
+}
+nav ul li:first-child {
+  margin-left: 0;
+}
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Hero section (tagline and name) */
+.hero {
+  text-align: center;
+  margin: 2em 0;
+}
+.hero h1 {
+  font-size: 2em;
+  margin: 0.2em 0;
+}
+.hero .name {
+  font-size: 1.2em;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Section headings */
+h2 {
+  font-size: 1.5em;
+  margin: 1.5em 0 0.5em;
+}
+
+/* Project list styles */
+#projects-highlight .project {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2em;
+}
+#projects-highlight .project img {
+  width: 180px;
+  max-width: 100%;
+  height: auto;
+  margin-right: 1em;
+}
+.project-text h3 {
+  margin: 0 0 0.3em;
+}
+.project-text p {
+  margin: 0 0 0.8em;
+}
+.project-text ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.project-text li {
+  display: inline;
+  margin-right: 1em;
+}
+.project-text li:last-child {
+  margin-right: 0;
+}
+.project-text a {
+  text-decoration: none;
+  color: #0066cc;
+}
+.project-text a:hover {
+  text-decoration: underline;
+}
+
+/* "More projects" link */
+.more-projects {
+  text-align: center;
+  font-style: italic;
+  margin: 2em 0;
+}
+.more-projects a {
+  text-decoration: none;
+  color: #0066cc;
+}
+.more-projects a:hover {
+  text-decoration: underline;
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 1em 0;
+  background: #f9f9f9;
+  border-top: 1px solid #ccc;
+}
+footer .social {
+  list-style: none;
+  margin: 0 0 0.5em;
+  padding: 0;
+}
+footer .social li {
+  display: inline;
+  margin: 0 1em;
+}
+footer .social li:first-child {
+  margin-left: 0;
+}
+footer .social li:last-child {
+  margin-right: 0;
+}
+footer a {
+  text-decoration: none;
+  color: #333;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+footer p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #777;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 600px) {
+  /* Stack nav links vertically on narrow screens */
+  nav ul {
+    text-align: center;
+  }
+  nav ul li {
+    display: inline-block;
+    margin: 0 0.5em;
+  }
+
+  /* Stack project entries vertically */
+  #projects-highlight .project {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  #projects-highlight .project img {
+    margin: 0 0 1em;
+  }
+  .project-text ul {
+    text-align: center;
+  }
+}
