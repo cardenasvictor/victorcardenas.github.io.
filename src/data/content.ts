@@ -95,8 +95,8 @@ export const cases: CaseStudy[] = [
     region: 'Mexico',
     track: 'Government',
     context: 'Mexico needed liquidity within weeks of a major earthquake or hurricane, without waiting for budget reallocation or emergency borrowing.',
-    instrument: 'Parametric catastrophe bond under the World Bank MultiCat Program, triggered by earthquake magnitude and hurricane pressure thresholds.',
-    role: 'Conceived the instrument in 2006 and led its technical design; later led the restructuring that broadened perils and improved pricing.',
+    instrument: 'Parametric catastrophe bond triggered by earthquake magnitude and hurricane pressure thresholds. The 2006 transaction seeded the World Bank\u2019s MultiCat Program; the 2009 issuance was the first placed under it.',
+    role: 'Led the technical design from the Government of Mexico in 2006; joined the World Bank team for the 2009 issuance under the MultiCat Program.',
     outcome: 'First sovereign cat bond issued by a developing economy. Template reused by subsequent sovereign issuers in Latin America and the Pacific.',
   },
   {
@@ -200,7 +200,7 @@ export const bio = {
   short:
     'Senior advisor with 20+ years designing sovereign catastrophe risk transfer instruments across 30 countries. Conceived Mexico’s first sovereign cat bond (2006) and led its restructuring. Recent work includes Vanuatu’s national disaster financing strategy with UNDP and a 25,000-asset climate risk assessment for Latin America’s largest telecom.',
   long: [
-    'Senior advisor with more than twenty years designing sovereign catastrophe risk transfer instruments across thirty countries. Conceived Mexico\u2019s first sovereign catastrophe bond in 2006 \u2014 the transaction that seeded the World Bank\u2019s MultiCat Program \u2014 and has since led and contributed to subsequent sovereign issuances. Built the first ENSO-linked parametric risk financing instrument for microfinance in South America.',
+    'Senior advisor with more than twenty years designing sovereign catastrophe risk transfer instruments across thirty countries. Conceived Mexico\u2019s first sovereign catastrophe bond in 2006 from within the Ministry of Finance \u2014 the transaction that seeded the World Bank\u2019s MultiCat Program \u2014 and in 2009, as part of the World Bank team, helped structure its first issuance under that program. Built the first ENSO-linked parametric risk financing instrument for microfinance in South America.',
     'Recent work spans Asia and the Pacific (Cambodia, Sri Lanka, Fiji, Vanuatu), the Caucasus (Armenia) and West Africa (Niger, Burkina Faso), including Vanuatu\u2019s national disaster financing strategy with UNDP, the first sovereign-developed disaster fund in East Africa, and \u2014 in the private sector \u2014 a critical infrastructure climate risk assessment covering 25,000 assets for Latin America\u2019s largest telecommunications operator.',
     'Doctoral candidate at the University of British Columbia\u2019s Institute for Resources, Environment and Sustainability. Research spans climate credit risk, compound flood risk to coastal infrastructure, climate risk disclosure by British Columbia companies, and the cost of capital of renewable versus fossil-fuel energy projects. Trusted advisor to the World Bank, UNDP, IDB, ADB and national governments. Combines rigorous analytics with executive communication.',
   ],
