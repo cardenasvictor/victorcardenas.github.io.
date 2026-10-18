@@ -164,6 +164,12 @@ ul { list-style: none; }
 .service-list li:last-child { border-bottom: 1px solid var(--border); }
 .service-list .marker { margin: 0; min-width: 1.5rem; flex-shrink: 0; }
 
+.card-featured { grid-column: 1 / -1; }
+.research-points { margin-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2rem; }
+.research-points li { font-size: .9375rem; color: var(--slate-600); line-height: 1.6; padding-left: 1rem; border-left: 2px solid var(--teal-100); }
+.research-points li strong { color: var(--navy-900); font-weight: 600; }
+@media (max-width: 760px) { .research-points { grid-template-columns: 1fr; } }
+
 /* ---------- Partners ---------- */
 .partners { padding: clamp(3rem, 5vw, 4.5rem) 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--slate-50); }
 .partners-label { font-size: .6875rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--slate-500); text-align: center; margin-bottom: 2rem; }

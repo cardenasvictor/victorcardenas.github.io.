@@ -16,15 +16,23 @@ import { researchLines, site } from '../data/content';
     <div class="container">
       <div class="section-intro reveal">
         <span class="eyebrow">Research Lines</span>
-        <h2 class="display-2">Four questions, one discipline</h2>
+        <h2 class="display-2">Five questions, one discipline</h2>
         <p>Each line answers a question a minister or a chief risk officer has actually asked. The theory exists because the practice needed it.</p>
       </div>
       <div class="grid-2">
         {researchLines.map((r, i) => (
-          <article class="card reveal">
+          <article class={`card reveal ${r.points ? 'card-featured' : ''}`}>
             <span class="marker">{String(i + 1).padStart(2, '0')}</span>
             <h3 class="heading-3">{r.title}</h3>
             <p class="body">{r.body}</p>
+            {r.points && (
+              <ul class="research-points">
+                {r.points.map((p) => {
+                  const [lead, ...rest] = p.split('. ');
+                  return <li><strong>{lead}.</strong> {rest.join('. ')}</li>;
+                })}
+              </ul>
+            )}
           </article>
         ))}
       </div>

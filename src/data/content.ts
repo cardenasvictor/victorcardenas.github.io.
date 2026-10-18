@@ -3,7 +3,7 @@
 
 export const site = {
   name: 'Victor Cardenas-Santiago',
-  tagline: 'Climate Risk Advisory',
+  tagline: 'Disaster Finance & Climate Credit Risk',
   url: 'https://victorcardenas.org',
   email: 'victor@cardenas-santiago.com',
   phone: '+1 236 885 3132',
@@ -156,7 +156,19 @@ export const cases: CaseStudy[] = [
   },
 ];
 
-export const researchLines = [
+export type ResearchLine = { title: string; body: string; points?: string[] };
+
+export const researchLines: ResearchLine[] = [
+  {
+    title: 'Physical climate risk in credit models',
+    body: 'How catastrophe-model output should cross the interface into bank credit systems — and what today\u2019s practice loses on the way.',
+    points: [
+      'From expected loss to concentration. Measuring what the industry-standard interface — a single average annual loss per exposure — withholds from credit models: nothing at the rating-materiality scale, but 28–41% of 1-in-100-year expected credit loss, nearly all of it unexpected loss concentrated in a single name.',
+      'Calibrating the margin of conservatism. Replacing judgement-based climate add-ons to PD and LGD with a number derived from damage-function uncertainty, through an admissibility protocol for vulnerability curves and a declared quantile rule that maps to prudential MoC categories.',
+      'What to request from a catastrophe model. A methodology for credit risk managers to select, transform and qualify catastrophe-model outputs without access to model internals, with each resulting credit metric labelled by the mathematical guarantee it carries.',
+      'The value of knowing the net loss curve. Quantifying when, and by how much, knowledge of the disaster-net credit loss distribution improves a bank\u2019s retention and capital decisions, and how that value shifts when external protections such as sovereign disaster finance change.',
+    ],
+  },
   {
     title: 'Optimal risk layering for disaster finance',
     body: 'Formal theory of how sovereigns and firms should combine reserves, contingent credit and risk transfer across a severity continuum.',

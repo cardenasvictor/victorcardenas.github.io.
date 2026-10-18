@@ -11,7 +11,7 @@ interface Props {
   closing?: boolean;
 }
 const { title, description = site.description, closing = true } = Astro.props;
-const fullTitle = title === 'Home' ? `${site.name} — Climate Risk and Resilience Advisory` : `${title} — ${site.name}`;
+const fullTitle = title === 'Home' ? `${site.name} — Disaster Finance & Climate Credit Risk` : `${title} — ${site.name}`;
 const ogImage = `${site.url}/images/og.jpg`;
 ---
 <!doctype html>
