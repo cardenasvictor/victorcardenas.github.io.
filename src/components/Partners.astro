@@ -1,0 +1,15 @@
+---
+import { partners } from '../data/content';
+---
+<section class="partners">
+  <div class="container">
+    <p class="partners-label">Engagements &amp; Collaborations</p>
+    <div class="logo-row">
+      {partners.map((p) => (
+        <div class="logo-cell">
+          <img src={`./images/logos/${p.file}`} alt={p.name} class={p.tall ? 'tall' : ''} loading="lazy" />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

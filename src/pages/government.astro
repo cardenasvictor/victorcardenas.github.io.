@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { governmentServices, cases } from '../data/content';
+const work = cases.filter((c) => c.track === 'Government');
+---
+<Base title="Government Advisory" description="Sovereign disaster risk finance for governments: catastrophe bonds, parametric solutions, disaster funds and risk-layered financing strategies.">
+  <Hero
+    compact
+    eyebrow="Government Advisory"
+    title="Sovereign disaster risk finance for governments"
+    sub="Structuring catastrophe bonds, parametric solutions and risk-layered financing strategies for ministries of finance and public institutions."
+    primary={{ label: 'Book a Consultation', href: './contact.html' }}
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="section-intro reveal">
+        <span class="eyebrow">Services</span>
+        <h2 class="display-2">From fiscal diagnostics to placed instruments</h2>
+        <p>Three lines of work that together give a government a financing architecture it can operate, not just a report it can file.</p>
+      </div>
+      <div class="grid-3">
+        {governmentServices.map((s) => (
+          <article class="card reveal">
+            <span class="marker">{s.n}</span>
+            <h3 class="heading-4">{s.title}</h3>
+            <p class="body">{s.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <div class="section-intro reveal">
+        <span class="eyebrow">Selected Work</span>
+        <h2 class="display-2">Instruments that exist and operate</h2>
+      </div>
+      <div class="work-list">
+        {work.map((c) => (
+          <a href={`./work.html#${c.slug}`} class="work-item reveal">
+            <span class="client">{c.region} · {c.client}</span>
+            <h3 class="heading-4">{c.title}</h3>
+            <p class="outcome">{c.outcome}</p>
+            <span class="btn-text">Read the case</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Discuss your country’s financing architecture"
+    body="A first conversation covers your current layers — reserves, contingent credit, transfer — and where the gaps are. No deliverable, no obligation."
+    label="Book a Consultation for Governments"
+  />
+</Base>

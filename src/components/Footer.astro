@@ -1,0 +1,44 @@
+---
+import { site } from '../data/content';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="brand-name">{site.name}</span>
+        <p>Climate risk and resilience advisory for governments and corporates. Sovereign disaster risk finance, adaptation strategy and disclosure-grade analytics.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Practices</h4>
+        <ul>
+          <li><a href="./government.html">Government Advisory</a></li>
+          <li><a href="./corporate.html">Corporate Advisory</a></li>
+          <li><a href="./research.html">Research</a></li>
+          <li><a href="./work.html">Selected Work</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href={`mailto:${site.email}`}>Email</a></li>
+          <li><a href={site.linkedin} rel="noopener" target="_blank">LinkedIn</a></li>
+          <li><a href={site.scholar} rel="noopener" target="_blank">Google Scholar</a></li>
+          <li><a href="./contact.html">Book a Call</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Office</h4>
+        <ul>
+          <li>Vancouver, British Columbia</li>
+          <li>Canada</li>
+          <li>{site.phone}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© {year} {site.name}. All rights reserved.</div>
+      <div>Vancouver, Canada</div>
+    </div>
+  </div>
+</footer>

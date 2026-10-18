@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import { researchLines, site } from '../data/content';
+---
+<Base title="Research" description="Applied research on disaster risk financing, compound flood risk and the financial impacts of climate disasters — University of British Columbia.">
+  <Hero
+    compact
+    eyebrow="Research"
+    title="Applied research at the frontier of disaster finance"
+    sub="Doctoral work at the University of British Columbia’s Institute for Resources, Environment and Sustainability, with publications and working papers that feed directly back into advisory practice."
+    secondary={{ label: 'Google Scholar', href: site.scholar }}
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="section-intro reveal">
+        <span class="eyebrow">Research Lines</span>
+        <h2 class="display-2">Four questions, one discipline</h2>
+        <p>Each line answers a question a minister or a chief risk officer has actually asked. The theory exists because the practice needed it.</p>
+      </div>
+      <div class="grid-2">
+        {researchLines.map((r, i) => (
+          <article class="card reveal">
+            <span class="marker">{String(i + 1).padStart(2, '0')}</span>
+            <h3 class="heading-3">{r.title}</h3>
+            <p class="body">{r.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <div class="section-intro reveal">
+        <span class="eyebrow">Forthcoming</span>
+        <h2 class="display-2">Disaster Risk Financing: Theory to Practice</h2>
+        <p>A monograph for CFOs and ministers of finance, under preparation with Springer Nature. It formalises optimal risk layering for sovereigns and firms and translates it into numbered principles, field lessons and maturity-conditioned implications.</p>
+      </div>
+      <div class="grid-3">
+        <div class="research-item reveal"><h3 class="heading-4">Methods</h3><p>Probabilistic catastrophe modelling (CLIMADA), panel econometrics, instrumental variables from climatology, satellite flood products.</p></div>
+        <div class="research-item reveal"><h3 class="heading-4">Collaborations</h3><p>Inter-American Development Bank, UBC IRES, and partners in Mexico, Peru and British Columbia.</p></div>
+        <div class="research-item reveal"><h3 class="heading-4">Publications</h3><p>Working papers and journal submissions are listed on Google Scholar. Preprints available on request.</p></div>
+      </div>
+      <p style="margin-top:2rem" class="reveal"><a href={site.scholar} class="btn btn-secondary" rel="noopener" target="_blank">View publications on Google Scholar</a></p>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,125 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Partners from '../components/Partners.astro';
+import { metrics, researchLines, bio } from '../data/content';
+---
+<Base title="Home">
+  <Hero
+    title="Climate risk and resilience advisory"
+    sub="Climate adaptation and sustainability advisory for corporates and organizations. Sovereign disaster risk finance for governments — combining 20+ years of practitioner experience with applied research at the frontier of climate analytics."
+    primary={{ label: 'Book a Consultation', href: './contact.html' }}
+    secondary={{ label: 'View Services', href: '#services' }}
+  />
+
+  <!-- Two practices -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-intro center reveal">
+        <span class="eyebrow">Two Practices, One Discipline</span>
+        <h2 class="display-2">Built for governments and corporates navigating climate risk</h2>
+        <p>Twenty years designing instruments that move from probabilistic risk analytics to executable financing and strategy — for ministries, multilaterals and boards.</p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card reveal">
+          <span class="eyebrow">For Public Institutions</span>
+          <h3 class="heading-3">Sovereign Disaster Risk Finance</h3>
+          <p class="audience">Ministries of finance, central banks and multilateral development partners.</p>
+          <ul class="service-list">
+            <li><span class="marker">01</span><span>Catastrophe bonds and parametric insurance — design, structuring and placement.</span></li>
+            <li><span class="marker">02</span><span>Risk-layered financing strategies and fiscal resilience diagnostics.</span></li>
+            <li><span class="marker">03</span><span>Disaster fund design, governance and policy frameworks.</span></li>
+          </ul>
+          <a href="./government.html" class="btn-text">Explore Government Advisory</a>
+        </article>
+
+        <article class="card reveal">
+          <span class="eyebrow">For Financial Institutions &amp; Corporates</span>
+          <h3 class="heading-3">Climate Risk and Sustainability Advisory</h3>
+          <p class="audience">Banks, insurers, infrastructure operators and listed corporates.</p>
+          <ul class="service-list">
+            <li><span class="marker">01</span><span>Physical climate risk assessments — asset-level exposure and portfolio AAL.</span></li>
+            <li><span class="marker">02</span><span>Adaptation strategy and resilience investment prioritization.</span></li>
+            <li><span class="marker">03</span><span>Disclosure support: TCFD, IFRS S2, OSFI — and board-ready reporting.</span></li>
+          </ul>
+          <a href="./corporate.html" class="btn-text">Explore Corporate Advisory</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <Partners />
+
+  <!-- Approach / metrics -->
+  <section class="section section-dark metrics on-dark">
+    <div class="container">
+      <div class="section-intro reveal">
+        <span class="eyebrow">Approach</span>
+        <h2 class="display-2">Quantitative rigour, translated into decisions</h2>
+        <p>From probabilistic catastrophe modelling to placement of sovereign instruments and disclosure-grade portfolio analytics — every engagement leaves clients with tools, not just reports.</p>
+      </div>
+      <div class="metric-row">
+        {metrics.map((m) => (
+          <div class="reveal">
+            <div class="metric-value">{m.value}</div>
+            <p class="metric-label">{m.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Research strip -->
+  <section class="section">
+    <div class="container">
+      <div class="section-intro reveal">
+        <span class="eyebrow">Research</span>
+        <h2 class="display-2">Practice grounded in active research</h2>
+        <p>Doctoral work at the University of British Columbia and ongoing publications keep the advisory practice at the frontier of disaster finance and climate analytics.</p>
+      </div>
+      <div class="research-list">
+        {researchLines.map((r) => (
+          <div class="research-item reveal">
+            <h3 class="heading-4">{r.title}</h3>
+            <p>{r.body}</p>
+          </div>
+        ))}
+      </div>
+      <p style="margin-top:2rem"><a href="./research.html" class="btn-text">Explore research</a></p>
+    </div>
+  </section>
+
+  <!-- Bio -->
+  <section class="section section-soft">
+    <div class="container bio-grid">
+      <div class="bio-portrait reveal" aria-hidden="true">
+        <!-- Replace with /images/portrait.jpg when available -->
+        <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%">
+          <defs>
+            <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0B2545"/><stop offset="1" stop-color="#143263"/></linearGradient>
+            <linearGradient id="ac" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#14B8A6" stop-opacity=".4"/><stop offset="1" stop-color="#0D9488" stop-opacity=".05"/></linearGradient>
+          </defs>
+          <rect width="400" height="500" fill="url(#bg)"/>
+          <g stroke="#fff" stroke-opacity=".1" stroke-width=".5" fill="none">
+            <path d="M0 100 Q100 80 200 100 T400 100"/><path d="M0 140 Q100 115 200 140 T400 140"/><path d="M0 180 Q100 150 200 180 T400 180"/><path d="M0 220 Q100 185 200 220 T400 220"/><path d="M0 260 Q100 220 200 260 T400 260"/><path d="M0 300 Q100 255 200 300 T400 300"/><path d="M0 340 Q100 290 200 340 T400 340"/><path d="M0 380 Q100 325 200 380 T400 380"/><path d="M0 420 Q100 360 200 420 T400 420"/>
+          </g>
+          <circle cx="280" cy="180" r="120" fill="url(#ac)"/>
+          <line x1="40" y1="450" x2="100" y2="450" stroke="#14B8A6" stroke-width="2"/>
+        </svg>
+      </div>
+      <div class="bio-content reveal">
+        <span class="eyebrow">About</span>
+        <h2 class="display-2">Practitioner with academic backing</h2>
+        <p>{bio.short}</p>
+        <p>Doctoral candidate at the University of British Columbia, where research focuses on compound flood risk to coastal infrastructure. Trusted advisor to the World Bank, UNDP, IDB, ADB and national governments.</p>
+        <div class="credentials">
+          <span class="credential">PhD Candidate, UBC</span>
+          <span class="credential">Former Mexico Ministry of Finance</span>
+          <span class="credential">Based in Vancouver, BC</span>
+        </div>
+        <p style="margin-top:1.5rem"><a href="./about.html" class="btn-text">Full profile</a></p>
+      </div>
+    </div>
+  </section>
+</Base>

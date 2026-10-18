@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { cases } from '../data/content';
+---
+<Base title="Selected Work" description="Selected engagements: Mexico sovereign cat bonds, Vanuatu and Mozambique disaster financing, CCRIF evaluation, and corporate climate risk portfolios.">
+  <Hero
+    compact
+    eyebrow="Selected Work"
+    title="Selected engagements"
+    sub="Six cases across sovereign and corporate practice. Each follows the same structure — context, instrument, role, outcome — because that is how the decision was actually made."
+  />
+
+  <section class="section">
+    <div class="container">
+      <div style="display:grid;gap:1.5rem">
+        {cases.map((c) => (
+          <article class="case reveal" id={c.slug}>
+            <div class="case-meta">
+              <span class="track">{c.track}</span>
+              <span>{c.region}</span>
+              <span>·</span>
+              <span>{c.client}</span>
+            </div>
+            <h2 class="heading-3">{c.title}</h2>
+            <dl>
+              <dt>Context</dt><dd>{c.context}</dd>
+              <dt>Instrument</dt><dd>{c.instrument}</dd>
+              <dt>Role</dt><dd>{c.role}</dd>
+              <dt>Outcome</dt><dd>{c.outcome}</dd>
+            </dl>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Full experience on request"
+    body="A detailed CV, references and additional engagement summaries are available for institutional procurement and due-diligence processes."
+    label="Request full experience"
+  />
+</Base>

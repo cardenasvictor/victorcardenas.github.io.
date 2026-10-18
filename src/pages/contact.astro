@@ -1,0 +1,63 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import { site } from '../data/content';
+---
+<Base title="Contact" closing={false} description="Get in touch to discuss sovereign disaster risk finance or corporate climate risk advisory.">
+  <Hero
+    compact
+    eyebrow="Contact"
+    title="Get in touch"
+    sub="Ready to discuss your climate risk challenges? Send a note or book a call directly."
+  />
+
+  <section class="section">
+    <div class="container contact-grid">
+      <!-- Form: wire `action` to Formspree / Netlify Forms / your handler. -->
+      <form class="form reveal" method="POST" action="#" data-netlify="true" name="contact">
+        <div class="form-row">
+          <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required autocomplete="name" /></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email" /></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="org">Organization</label><input id="org" name="organization" type="text" autocomplete="organization" /></div>
+          <div class="field">
+            <label for="type">I am contacting as</label>
+            <select id="type" name="type">
+              <option value="government">Government / public institution</option>
+              <option value="corporate">Corporate / financial institution</option>
+              <option value="multilateral">Multilateral / development partner</option>
+              <option value="academic">Academic / research</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="6" required></textarea></div>
+        <div><button type="submit" class="btn btn-primary">Send message</button></div>
+      </form>
+
+      <aside class="contact-info reveal">
+        <div>
+          <h3 class="heading-4">Email</h3>
+          <a href={`mailto:${site.email}`}>{site.email}</a>
+        </div>
+        <div>
+          <h3 class="heading-4">Phone</h3>
+          <a href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phone}</a>
+        </div>
+        <div>
+          <h3 class="heading-4">Office</h3>
+          <p>{site.city}</p>
+          <p>Working with clients across Latin America, the Caribbean, Africa and the Pacific.</p>
+        </div>
+        <div>
+          <h3 class="heading-4">Profiles</h3>
+          <p><a href={site.linkedin} rel="noopener" target="_blank">LinkedIn</a> · <a href={site.scholar} rel="noopener" target="_blank">Google Scholar</a></p>
+        </div>
+        <div>
+          <a href={site.calendly} class="btn btn-secondary" rel="noopener" target="_blank">Book a Call</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+</Base>

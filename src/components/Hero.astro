@@ -1,0 +1,29 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  sub: string;
+  compact?: boolean;
+  image?: string;
+  primary?: { label: string; href: string };
+  secondary?: { label: string; href: string };
+}
+const { eyebrow, title, sub, compact = false, image = './images/hero.jpg', primary, secondary } = Astro.props;
+---
+<section class={`hero ${compact ? 'hero-compact' : ''}`}>
+  <div class="hero-bg" aria-hidden="true"><img src={image} alt="" fetchpriority="high" /></div>
+  <div class="container">
+    <div class="hero-content">
+      {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+      <h1 class={compact ? 'display-2' : 'display-1'} style={eyebrow ? 'margin-top:1rem' : ''}>{title}</h1>
+      <div class="hero-rule"></div>
+      <p class="hero-sub">{sub}</p>
+      {(primary || secondary) && (
+        <div class="hero-ctas">
+          {primary && <a href={primary.href} class="btn btn-primary">{primary.label}</a>}
+          {secondary && <a href={secondary.href} class="btn btn-secondary">{secondary.label}</a>}
+        </div>
+      )}
+    </div>
+  </div>
+</section>

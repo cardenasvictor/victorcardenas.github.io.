@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { corporateServices, cases } from '../data/content';
+const work = cases.filter((c) => c.track === 'Corporate');
+---
+<Base title="Corporate Advisory" description="Physical climate risk assessments, adaptation strategy and disclosure support for financial institutions and corporates.">
+  <Hero
+    compact
+    eyebrow="Corporate Advisory"
+    title="Climate risk and sustainability advisory for corporates"
+    sub="Physical risk assessments, adaptation strategy and disclosure support for financial institutions, infrastructure operators and listed companies."
+    primary={{ label: 'Book a Consultation', href: './contact.html' }}
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="section-intro reveal">
+        <span class="eyebrow">Services</span>
+        <h2 class="display-2">Asset-level analytics, board-level answers</h2>
+        <p>The same probabilistic models used to price sovereign risk transfer, applied to portfolios, balance sheets and disclosure obligations.</p>
+      </div>
+      <div class="grid-3">
+        {corporateServices.map((s) => (
+          <article class="card reveal">
+            <span class="marker">{s.n}</span>
+            <h3 class="heading-4">{s.title}</h3>
+            <p class="body">{s.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <div class="section-intro reveal">
+        <span class="eyebrow">Selected Work</span>
+        <h2 class="display-2">Portfolios, scenarios, disclosures</h2>
+      </div>
+      <div class="work-list">
+        {work.map((c) => (
+          <a href={`./work.html#${c.slug}`} class="work-item reveal">
+            <span class="client">{c.region} · {c.client}</span>
+            <h3 class="heading-4">{c.title}</h3>
+            <p class="outcome">{c.outcome}</p>
+            <span class="btn-text">Read the case</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    title="Know your physical exposure before your regulator asks"
+    body="A scoping call covers your asset data, the scenarios that matter for your disclosure regime, and what a defensible assessment would take."
+    label="Book a Consultation for Corporates"
+  />
+</Base>
