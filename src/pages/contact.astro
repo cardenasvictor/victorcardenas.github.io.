@@ -13,8 +13,10 @@ import { site } from '../data/content';
 
   <section class="section">
     <div class="container contact-grid">
-      <!-- Form: wire `action` to Formspree / Netlify Forms / your handler. -->
-      <form class="form reveal" method="POST" action="#" data-netlify="true" name="contact">
+      <form class="form reveal" method="POST" action="https://formspree.io/f/mljgvoww">
+        <input type="hidden" name="_subject" value="Website contact — victorcardenas.org" />
+        <input type="hidden" name="_next" value="https://victorcardenas.org/thanks.html" />
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
         <div class="form-row">
           <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required autocomplete="name" /></div>
           <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email" /></div>
