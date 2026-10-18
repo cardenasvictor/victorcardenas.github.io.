@@ -27,7 +27,7 @@ export const metrics = [
   { value: '30+', label: 'Countries with operational engagements across Latin America, the Caribbean, Africa and the Pacific' },
   { value: '2006', label: "Year of Mexico's first sovereign catastrophe bond — among the earliest in any emerging economy" },
   { value: '25K', label: 'Critical infrastructure assets analysed under multi-hazard climate scenarios' },
-  { value: '4', label: 'Continents with active engagements: Latin America, the Caribbean, Africa and the Pacific' },
+  { value: '5', label: 'Continents with active engagements: Latin America, Africa, Asia, the Caucasus and the Pacific' },
 ];
 
 export const partners = [
@@ -200,8 +200,8 @@ export const bio = {
   short:
     'Senior advisor with 20+ years designing sovereign catastrophe risk transfer instruments across 30 countries. Conceived Mexico’s first sovereign cat bond (2006) and led its restructuring. Recent work includes Vanuatu’s national disaster financing strategy with UNDP and a 25,000-asset climate risk assessment for Latin America’s largest telecom.',
   long: [
-    'Senior advisor with more than twenty years designing sovereign catastrophe risk transfer instruments across thirty countries. Conceived Mexico’s first sovereign catastrophe bond in 2006 under the World Bank MultiCat Program and led its subsequent restructuring. Built the first ENSO-linked parametric risk financing instrument for microfinance in South America.',
-    'Recent work includes Vanuatu’s national disaster financing strategy with UNDP, the first disaster fund in East Africa, and a critical infrastructure climate risk assessment covering 25,000 assets for Latin America’s largest telecommunications operator.',
-    'Doctoral candidate at the University of British Columbia’s Institute for Resources, Environment and Sustainability, developing compound flood risk models for coastal infrastructure. Trusted advisor to the World Bank, UNDP, IDB, ADB and national governments. Combines rigorous analytics with executive communication.',
+    'Senior advisor with more than twenty years designing sovereign catastrophe risk transfer instruments across thirty countries. Conceived Mexico\u2019s first sovereign catastrophe bond in 2006 under the World Bank MultiCat Program and has led and contributed to subsequent sovereign transactions. Built the first ENSO-linked parametric risk financing instrument for microfinance in South America.',
+    'Recent work spans Asia and the Pacific (Cambodia, Sri Lanka, Fiji, Vanuatu), the Caucasus (Armenia) and West Africa (Niger, Burkina Faso), including Vanuatu\u2019s national disaster financing strategy with UNDP, the first sovereign-developed disaster fund in East Africa, and \u2014 in the private sector \u2014 a critical infrastructure climate risk assessment covering 25,000 assets for Latin America\u2019s largest telecommunications operator.',
+    'Doctoral candidate at the University of British Columbia\u2019s Institute for Resources, Environment and Sustainability. Research spans climate credit risk, compound flood risk to coastal infrastructure, climate risk disclosure by British Columbia companies, and the cost of capital of renewable versus fossil-fuel energy projects. Trusted advisor to the World Bank, UNDP, IDB, ADB and national governments. Combines rigorous analytics with executive communication.',
   ],
 };
