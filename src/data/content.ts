@@ -43,12 +43,12 @@ export const governmentServices = [
   {
     n: '01',
     title: 'Catastrophe Bonds & Parametric Insurance',
-    body: 'Design, structuring and placement of multi-peril sovereign risk transfer. Conceived the first sovereign cat bond in a developing economy (Mexico, 2006) and led its restructuring.',
+    body: 'Design, structuring and placement of multi-peril sovereign risk transfer. Conceived the first sovereign cat bond in a developing economy and led its restructuring.',
   },
   {
     n: '02',
     title: 'Disaster Fund Design & Operation',
-    body: 'National financing architectures — governance, eligibility and disbursement frameworks. Vanuatu national disaster financing strategy; first disaster fund in East Africa (Mozambique).',
+    body: 'National financing architectures — governance, eligibility and disbursement frameworks. End-to-end support to design disaster finance strategies, propose and implement the regulatory framework, and put the proposed design into operation.',
   },
   {
     n: '03',
