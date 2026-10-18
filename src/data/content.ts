@@ -5,7 +5,7 @@ export const site = {
   name: 'Victor Cardenas-Santiago',
   tagline: 'Disaster Finance & Climate Credit Risk',
   url: 'https://victorcardenas.org',
-  email: 'victor@cardenas-santiago.com',
+  email: 'sales@victorcardenas.org',
   phone: '+1 236 885 3132',
   city: 'Vancouver, British Columbia, Canada',
   linkedin: 'https://www.linkedin.com/in/victorcardenas/',
