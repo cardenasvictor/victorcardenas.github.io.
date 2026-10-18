@@ -236,6 +236,10 @@ ul { list-style: none; }
 .field label { font-size: .8125rem; font-weight: 600; color: var(--navy-900); }
 .field input, .field select, .field textarea { font-family: inherit; font-size: .9375rem; padding: .75rem .875rem; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); background: #fff; color: var(--text-primary); transition: border-color var(--duration) var(--ease); }
 .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(13,148,136,.15); }
+.form-status { font-size: .9375rem; margin-top: .25rem; min-height: 1.5em; }
+.form-status.ok { color: var(--teal-700); font-weight: 500; }
+.form-status.err { color: #B42318; font-weight: 500; }
+.btn:disabled { opacity: .6; cursor: default; transform: none; }
 .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
 .contact-info .heading-4 { margin-bottom: .25rem; }
 .contact-info a { color: var(--navy-900); font-weight: 500; }

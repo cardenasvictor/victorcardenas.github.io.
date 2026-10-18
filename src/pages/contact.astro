@@ -13,9 +13,8 @@ import { site } from '../data/content';
 
   <section class="section">
     <div class="container contact-grid">
-      <form class="form reveal" method="POST" action="https://formspree.io/f/mljgvoww">
+      <form class="form reveal" id="contact-form" method="POST" action="https://formspree.io/f/mljgvoww">
         <input type="hidden" name="_subject" value="Website contact — victorcardenas.org" />
-        <input type="hidden" name="_next" value="https://victorcardenas.org/thanks.html" />
         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
         <div class="form-row">
           <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" required autocomplete="name" /></div>
@@ -35,7 +34,8 @@ import { site } from '../data/content';
           </div>
         </div>
         <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="6" required></textarea></div>
-        <div><button type="submit" class="btn btn-primary">Send message</button></div>
+        <div><button type="submit" class="btn btn-primary" id="contact-submit">Send message</button></div>
+        <p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
       </form>
 
       <aside class="contact-info reveal">
@@ -63,3 +63,39 @@ import { site } from '../data/content';
     </div>
   </section>
 </Base>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const btn = document.getElementById('contact-submit') as HTMLButtonElement | null;
+  const status = document.getElementById('contact-status');
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!btn || !status) return;
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    status.textContent = '';
+    status.className = 'form-status';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+      if (res.ok) {
+        form.reset();
+        status.textContent = 'Thank you — your message has been received. I typically reply within two business days.';
+        status.classList.add('ok');
+      } else {
+        const data = await res.json().catch(() => ({}));
+        status.textContent = data?.errors?.map((x: any) => x.message).join(', ') || 'Something went wrong. Please email me directly.';
+        status.classList.add('err');
+      }
+    } catch {
+      status.textContent = 'Network error. Please email me directly.';
+      status.classList.add('err');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Send message';
+    }
+  });
+</script>
