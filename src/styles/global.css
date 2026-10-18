@@ -193,7 +193,7 @@ ul { list-style: none; }
 
 /* ---------- Bio ---------- */
 .bio-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
-.bio-portrait { aspect-ratio: 4/5; border-radius: var(--radius-lg); overflow: hidden; background: var(--navy-900); box-shadow: var(--shadow-md); }
+.bio-portrait { aspect-ratio: 1/1; max-width: 440px; border-radius: var(--radius-lg); overflow: hidden; background: var(--navy-900); box-shadow: var(--shadow-md); }
 .bio-portrait img { width: 100%; height: 100%; object-fit: cover; }
 .bio-content .eyebrow { margin-bottom: 1rem; }
 .bio-content .display-2 { margin-bottom: 1.5rem; }

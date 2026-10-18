@@ -9,8 +9,8 @@ export const site = {
   phone: '+1 236 885 3132',
   city: 'Vancouver, British Columbia, Canada',
   linkedin: 'https://www.linkedin.com/in/victorcardenas/',
-  scholar: 'https://scholar.google.com/',
-  calendly: 'https://calendly.com/',
+  scholar: 'https://scholar.google.ca/citations?user=lY58DkwAAAAJ&hl=en',
+  calendly: 'https://calendly.com/cardenas-victor/30min',
   description:
     'Climate adaptation and sustainability advisory for corporates and organizations. Sovereign disaster risk finance for governments.',
 };
