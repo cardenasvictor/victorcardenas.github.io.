@@ -3,6 +3,7 @@ title: "Why the average annual loss is not enough for a credit committee"
 date: 2026-10-20
 tag: Climate Credit Risk
 summary: "Most climate-risk pipelines hand banks a single number per asset. That number is the right one for provisioning and the wrong one for capital — and the difference is where the tail lives."
+draft: true
 sources:
   - label: "OSFI–AMF Standardized Climate Scenario Exercise (2025)"
     url: "https://www.osfi-bsif.gc.ca/"
