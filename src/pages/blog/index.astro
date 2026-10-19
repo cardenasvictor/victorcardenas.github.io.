@@ -1,0 +1,30 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const fmt = (d: Date) => d.toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+---
+<Base title="Blog" description="Weekly notes on disaster risk finance, climate credit risk and the financial side of disasters.">
+  <Hero
+    compact
+    eyebrow="Blog"
+    title="Weekly notes on disaster finance and climate credit risk"
+    sub="One note a week on what moved in sovereign risk transfer, climate credit risk and the financial aftermath of disasters — and why it matters for a ministry, a board or a credit committee."
+    secondary={{ label: 'RSS feed', href: '/rss.xml' }}
+  />
+  <section class="section">
+    <div class="container">
+      <div class="post-list">
+        {posts.map((p) => (
+          <a href={`/blog/${p.id}.html`} class="post-item reveal">
+            <div class="post-meta"><span class="tag">{p.data.tag}</span><time datetime={p.data.date.toISOString()}>{fmt(p.data.date)}</time></div>
+            <h2 class="heading-3">{p.data.title}</h2>
+            <p>{p.data.summary}</p>
+            <span class="btn-text">Read the note</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

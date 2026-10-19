@@ -11,7 +11,7 @@ const work = cases.filter((c) => c.track === 'Government');
     eyebrow="Government Advisory"
     title="Sovereign disaster risk finance for governments"
     sub="Structuring catastrophe bonds, parametric solutions and risk-layered financing strategies for ministries of finance and public institutions."
-    primary={{ label: 'Book a Consultation', href: './contact.html' }}
+    primary={{ label: 'Book a Consultation', href: '/contact.html' }}
   />
 
   <section class="section">
@@ -41,7 +41,7 @@ const work = cases.filter((c) => c.track === 'Government');
       </div>
       <div class="work-list">
         {work.map((c) => (
-          <a href={`./work.html#${c.slug}`} class="work-item reveal">
+          <a href={`/work.html#${c.slug}`} class="work-item reveal">
             <span class="client">{c.region} · {c.client}</span>
             <h3 class="heading-4">{c.title}</h3>
             <p class="outcome">{c.outcome}</p>

@@ -19,6 +19,7 @@ export const nav = [
   { label: 'Government', href: 'government' },
   { label: 'Corporate', href: 'corporate' },
   { label: 'Research', href: 'research' },
+  { label: 'Blog', href: 'blog' },
   { label: 'About', href: 'about' },
   { label: 'Selected Work', href: 'work' },
 ];

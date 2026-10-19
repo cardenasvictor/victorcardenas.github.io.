@@ -3,12 +3,15 @@ import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
 import Partners from '../components/Partners.astro';
 import { metrics, researchLines, bio } from '../data/content';
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
+const fmt = (d: Date) => d.toLocaleDateString('en-CA', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
 ---
 <Base title="Home">
   <Hero
     title="Climate risk and resilience advisory"
     sub="Climate adaptation and sustainability advisory for corporates and organizations. Sovereign disaster risk finance for governments — combining 20+ years of practitioner experience with applied research at the frontier of climate analytics."
-    primary={{ label: 'Book a Consultation', href: './contact.html' }}
+    primary={{ label: 'Book a Consultation', href: '/contact.html' }}
     secondary={{ label: 'View Services', href: '#services' }}
   />
 
@@ -31,7 +34,7 @@ import { metrics, researchLines, bio } from '../data/content';
             <li><span class="marker">02</span><span>Risk-layered financing strategies and fiscal resilience diagnostics.</span></li>
             <li><span class="marker">03</span><span>Disaster fund design, governance and policy frameworks.</span></li>
           </ul>
-          <a href="./government.html" class="btn-text">Explore Government Advisory</a>
+          <a href="/government.html" class="btn-text">Explore Government Advisory</a>
         </article>
 
         <article class="card reveal">
@@ -43,7 +46,7 @@ import { metrics, researchLines, bio } from '../data/content';
             <li><span class="marker">02</span><span>Adaptation strategy and resilience investment prioritization.</span></li>
             <li><span class="marker">03</span><span>Disclosure support: TCFD, IFRS S2, OSFI — and board-ready reporting.</span></li>
           </ul>
-          <a href="./corporate.html" class="btn-text">Explore Corporate Advisory</a>
+          <a href="/corporate.html" class="btn-text">Explore Corporate Advisory</a>
         </article>
       </div>
     </div>
@@ -86,15 +89,38 @@ import { metrics, researchLines, bio } from '../data/content';
           </div>
         ))}
       </div>
-      <p style="margin-top:2rem"><a href="./research.html" class="btn-text">Explore research</a></p>
+      <p style="margin-top:2rem"><a href="/research.html" class="btn-text">Explore research</a></p>
     </div>
   </section>
 
+  <!-- Latest from the blog -->
+  {posts.length > 0 && (
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-intro reveal">
+          <span class="eyebrow">Blog</span>
+          <h2 class="display-2">Latest from the blog</h2>
+          <p>One note a week on disaster risk finance, climate credit risk and the financial side of disasters.</p>
+        </div>
+        <div class="post-grid">
+          {posts.map((p) => (
+            <a href={`/blog/${p.id}.html`} class="post-card reveal">
+              <div class="post-meta"><span class="tag">{p.data.tag}</span><time>{fmt(p.data.date)}</time></div>
+              <h3 class="heading-4">{p.data.title}</h3>
+              <p>{p.data.summary}</p>
+            </a>
+          ))}
+        </div>
+        <p style="margin-top:2rem"><a href="/blog.html" class="btn-text">All notes</a></p>
+      </div>
+    </section>
+  )}
+
   <!-- Bio -->
-  <section class="section section-soft">
+  <section class="section">
     <div class="container bio-grid">
       <div class="bio-portrait reveal">
-        <img src="./images/portrait.jpg" alt="Victor Cardenas-Santiago" width="400" height="400" loading="lazy" />
+        <img src="/images/portrait.jpg" alt="Victor Cardenas-Santiago" width="400" height="400" loading="lazy" />
       </div>
       <div class="bio-content reveal">
         <span class="eyebrow">About</span>
@@ -106,7 +132,7 @@ import { metrics, researchLines, bio } from '../data/content';
           <span class="credential">Former Mexico Ministry of Finance</span>
           <span class="credential">Based in Vancouver, BC</span>
         </div>
-        <p style="margin-top:1.5rem"><a href="./about.html" class="btn-text">Full profile</a></p>
+        <p style="margin-top:1.5rem"><a href="/about.html" class="btn-text">Full profile</a></p>
       </div>
     </div>
   </section>

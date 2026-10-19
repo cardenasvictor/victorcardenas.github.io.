@@ -1,23 +1,24 @@
 ---
 import { site, nav } from '../data/content';
 const current = Astro.url.pathname.replace(/^\//, '').replace(/\.html$/, '').replace(/\/$/, '');
-const isCurrent = (href: string) => current === href;
+const isCurrent = (href: string) => current === href || current.startsWith(href + '/');
+const linkFor = (href: string) => `/${href}.html`;
 ---
 <header class="site-header">
   <div class="container nav">
-    <a href="./" class="brand" aria-label={`${site.name} — Home`}>
+    <a href="/" class="brand" aria-label={`${site.name} — Home`}>
       <span class="brand-name">{site.name}</span>
       <span class="brand-tagline">{site.tagline}</span>
     </a>
 
     <nav class="nav-links" aria-label="Primary">
       {nav.map((item) => (
-        <a href={`./${item.href}.html`} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>
+        <a href={linkFor(item.href)} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>
       ))}
     </nav>
 
     <div class="nav-right">
-      <a href="./contact.html" class="btn btn-primary">Get in Touch</a>
+      <a href="/contact.html" class="btn btn-primary">Get in Touch</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
         <span></span>
       </button>
@@ -26,9 +27,9 @@ const isCurrent = (href: string) => current === href;
 
   <div class="mobile-menu" id="mobile-menu" data-open="false">
     {nav.map((item) => (
-      <a href={`./${item.href}.html`} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>
+      <a href={linkFor(item.href)} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>
     ))}
-    <a href="./contact.html" class="btn btn-primary">Get in Touch</a>
+    <a href="/contact.html" class="btn btn-primary">Get in Touch</a>
   </div>
 </header>
 

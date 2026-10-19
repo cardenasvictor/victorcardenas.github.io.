@@ -8,7 +8,7 @@ interface Props {
   primary?: { label: string; href: string };
   secondary?: { label: string; href: string };
 }
-const { eyebrow, title, sub, compact = false, image = './images/hero.jpg', primary, secondary } = Astro.props;
+const { eyebrow, title, sub, compact = false, image = '/images/hero.jpg', primary, secondary } = Astro.props;
 ---
 <section class={`hero ${compact ? 'hero-compact' : ''}`}>
   <div class="hero-bg" aria-hidden="true"><img src={image} alt="" fetchpriority="high" /></div>
